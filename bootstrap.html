@@ -1,0 +1,26 @@
+<head>
+  <title>bootstrap</title>
+</head>
+
+<body>
+	{{> tabs}}
+	{{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  <p class=lead>{{greeting}}</p>
+  <button class="btn btn-primary">Click</button>
+</template>
+
+<template name="tabs">
+	<ul class="nav nav-tabs">
+		{{#each pages}}
+			{{>tab}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="tab">
+	<li class={{TabActive this}}><a href="{{href}}">{{text}}</a></li>
+</template>
