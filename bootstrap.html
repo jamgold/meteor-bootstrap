@@ -10,7 +10,8 @@
 <template name="hello">
   <h1>Hello World!</h1>
   <p class=lead>{{greeting}}</p>
-  <button class="btn btn-primary">Click</button>
+  <button class="btn btn-primary main-click {{buttonStatus "main-click"}}">Click Me</button>
+  {{>button_group}}
 </template>
 
 <template name="tabs">
@@ -19,8 +20,17 @@
 			{{>tab}}
 		{{/each}}
 	</ul>
+	{{TabsHelper}}
 </template>
 
 <template name="tab">
 	<li class={{TabActive this}}><a href="{{href}}">{{text}}</a></li>
+</template>
+
+<template name="button_group">
+	<div class="btn-group">
+	  <button class="btn {{buttonGroup "left"}}">Left</button>
+	  <button class="btn {{buttonGroup "middle"}}">Middle</button>
+	  <button class="btn {{buttonGroup "right"}}">Right</button>
+	</div>
 </template>
